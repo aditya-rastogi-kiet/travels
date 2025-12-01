@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WanderWorld Travels</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+body{
+background:#f4f4f4;
+color:#222;
+}
+header{
+background:#003580;
+color:white;
+padding:20px;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+}
+nav{
+background:#00264d;
+display:flex;
+justify-content:center;
+}
+nav a{
+color:white;
+padding:15px 25px;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+nav a:hover{
+background:#003580;
+}
+section{
+width:90%;
+margin:auto;
+padding:30px 0;
+}
+h2{
+font-size:28px;
+margin-bottom:10px;
+color:#003580;
+}
+.package-box, .tips-box{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.package-box img{
+width:100%;
+border-radius:10px;
+margin:15px 0;
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:15px;
+}
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+.gallery img:hover{
+transform:scale(1.05);
+}
+.booking-form{
+background:#002f63;
+padding:25px;
+color:white;
+border-radius:10px;
+margin-top:40px;
+}
+.booking-form input, .booking-form select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+.booking-form button{
+padding:12px 20px;
+background:#00c853;
+border:none;
+color:white;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+transition:0.3s;
+}
+.booking-form button:hover{
+background:#009624;
+}
+footer{
+background:#003580;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:40px;
+font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<header>WanderWorld Travel Agency</header>
+
+<nav>
+<a href="#packages">Packages</a>
+<a href="#gallery">Gallery</a>
+<a href="#tips">Travel Tips</a>
+<a href="#booking">Booking</a>
+</nav>
+
+<section id="packages">
+<h2>Popular Tour Packages</h2>
+
+<div class="package-box">
+<h3>Maldives Luxury Escape</h3>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="">
+<p>Enjoy 5 nights at a stunning water villa, private beaches, ocean adventures, and beautiful sunsets.</p>
+<p><strong>Price:</strong> ₹89,999 per person</p>
+</div>
+
+<div class="package-box">
+<h3>Switzerland Alpine Tour</h3>
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="">
+<p>A 7-day European escape covering Zurich, Lucerne, Mt. Titlis, and the scenic Swiss countryside.</p>
+<p><strong>Price:</strong> ₹1,49,999 per person</p>
+</div>
+
+<div class="package-box">
+<h3>Goa Beach Holiday</h3>
+<img src="https://images.unsplash.com/photo-1505739773434-c1f1a9b1af81" alt="">
+<p>Relax on golden beaches, explore nightlife, taste seafood, and enjoy water sports.</p>
+<p><strong>Price:</strong> ₹14,999 per person</p>
+</div>
+
+</section>
+
+<section id="gallery">
+<h2>Destination Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1500048993959-d6b4755093e3">
+<img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef">
+<img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<img src="https://images.unsplash.com/photo-1500534314209-a26db0f5b87e">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+</div>
+</section>
+
+<section id="tips">
+<h2>Travel Tips</h2>
+
+<div class="tips-box">
+<h3>1. Pack Light but Smart</h3>
+<p>Always carry essentials like medicines, chargers, ID proofs, emergency cash, and travel-size items.</p>
+</div>
+
+<div class="tips-box">
+<h3>2. Stay Hydrated During Travel</h3>
+<p>Long journeys can drain energy. Keep water handy and avoid heavy meals during travel.</p>
+</div>
+
+<div class="tips-box">
+<h3>3. Research Local Culture</h3>
+<p>Understanding local customs helps in respectful and safe travel experiences.</p>
+</div>
+
+</section>
+
+<section id="booking">
+<h2>Book Your Trip</h2>
+
+<div class="booking-form">
+<h3>Travel Booking Form</h3>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="email" id="email" placeholder="Email">
+<input type="text" id="phone" placeholder="Phone Number">
+
+<select id="destination">
+<option value="">Select Destination</option>
+<option>Maldives</option>
+<option>Switzerland</option>
+<option>Goa</option>
+<option>Dubai</option>
+<option>Singapore</option>
+</select>
+
+<input type="date" id="date">
+
+<button onclick="bookNow()">Submit Booking</button>
+
+<p id="msg"></p>
+</div>
+
+</section>
+
+<footer>
+© 2025 WanderWorld Travel Agency | Explore the World With Us
+</footer>
+
+<script>
+function bookNow(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let dest=document.getElementById("destination").value;
+let msg=document.getElementById("msg");
+
+if(name && email.includes("@") && phone.length>=10 && dest!=""){
+msg.innerHTML="Your booking request has been submitted!";
+msg.style.color="#00e676";
+}
+else{
+msg.innerHTML="Please fill all fields correctly.";
+msg.style.color="yellow";
+}
+}
+</script>
+
+</body>
+</html>
